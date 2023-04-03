@@ -1,0 +1,34 @@
+server:
+  port: 8198
+
+spring:
+#  redis:
+#    port: 6379
+#    host: 10.10.151.188
+#    cluster:
+#      nodes:
+#        - 10.10.151.188:7000
+#        - 10.10.151.188:7001
+#        - 10.10.151.188:7002
+#        - 10.10.151.188:7003
+#        - 10.10.151.188:7004
+#        - 10.10.151.188:7005
+#    password: 123456
+  application:
+    name: goat
+  kafka:
+    bootstrap-servers: 115.146.122.211:9093
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: goat
+
+
+properties:
+  kafka:
+    topic: goat
+    partition: 1
+    replication-factor: 1
+    delivery-timeout: 5000
+    request-timeout: 4000
+    retries: 3
