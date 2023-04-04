@@ -1,3 +1,7 @@
+logging:
+  level:
+    ROOT: DEBUG
+
 server:
   port: 8198
 
@@ -21,7 +25,8 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-      client-id: goat
+      retries: 0
+      acks: all
 
 
 properties:
