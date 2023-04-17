@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class KafkaConsumerServiceImpl implements KafkaConsumerService {
 
     @Override
-    @KafkaListener(topics = "goat", groupId = "group_id")
+//    @KafkaListener(topics = "goat", groupId = "group_id")
     public void consumer(Object data) {
         System.out.println(data);
     }
